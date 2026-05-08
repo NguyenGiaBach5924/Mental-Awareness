@@ -31,7 +31,6 @@ export default function App() {
     { id: "definition", label: "What is Depression?" },
     { id: "symptoms", label: "Common Symptoms" },
     { id: "myths", label: "Myth vs. Reality" },
-    { id: "biological", label: "Biological Factors" },
     { id: "seek-help", label: "Seek Professional Help" },
   ];
 
