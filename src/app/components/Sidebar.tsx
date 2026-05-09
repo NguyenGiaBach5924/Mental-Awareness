@@ -36,7 +36,7 @@ export function Sidebar({ activeSection, setActiveSection, isOpen, closeSidebar 
       label: 'Anxiety',
       subsections: [
         { id: 'what-is-anxiety', label: 'What is Anxiety?' },
-        { id: 'anxiety-misconceptions', label: 'Misconceptions' },
+        { id: 'cause', label: 'Cause' },
         { id: 'treatment', label: 'Treatment' },
         { id: 'anxiety-references', label: 'References' }
       ]
