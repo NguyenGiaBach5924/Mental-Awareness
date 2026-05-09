@@ -1,3 +1,5 @@
+import { translations } from '../translations';
+
 interface TOCItem {
   id: string;
   label: string;
@@ -5,13 +7,16 @@ interface TOCItem {
 
 interface TableOfContentsProps {
   items: TOCItem[];
+  language: string;
 }
 
-export function TableOfContents({ items }: TableOfContentsProps) {
+export function TableOfContents({ items, language }: TableOfContentsProps) {
+  const t = translations[language as keyof typeof translations].toc;
+
   return (
     <div className="hidden xl:block sticky top-[80px] w-[220px] ml-8">
       <div className="p-4 bg-[#F8FAFC] dark:bg-gray-800 rounded-lg">
-        <h3 className="font-medium mb-3 text-gray-800 dark:text-gray-200">On this page</h3>
+        <h3 className="font-medium mb-3 text-gray-800 dark:text-gray-200">{t.onThisPage}</h3>
         <ul className="space-y-2">
           {items.map(item => (
             <li key={item.id}>

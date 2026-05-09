@@ -4,12 +4,13 @@ import { Sidebar } from "./components/Sidebar";
 import { ContentSection } from "./components/ContentSection";
 import { TableOfContents } from "./components/TableOfContents";
 import { Footer } from "./components/Footer";
+import { translations } from "./translations";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState("EN");
   const [activeSection, setActiveSection] = useState(
-    "what-is-depression",
+    "home",
   );
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -27,11 +28,14 @@ export default function App() {
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const closeSidebar = () => setSidebarOpen(false);
 
+  const t = translations[language as keyof typeof translations].toc;
+
   const tocItems = [
-    { id: "definition", label: "What is Depression?" },
-    { id: "symptoms", label: "Common Symptoms" },
-    { id: "myths", label: "Myth vs. Reality" },
-    { id: "seek-help", label: "Seek Professional Help" },
+    { id: "definition", label: t.definition },
+    { id: "symptoms", label: t.symptoms },
+    { id: "myths", label: t.myths },
+    { id: "biological", label: t.biological },
+    { id: "seek-help", label: t.seekHelp },
   ];
 
   return (
@@ -50,18 +54,23 @@ export default function App() {
           setActiveSection={setActiveSection}
           isOpen={sidebarOpen}
           closeSidebar={closeSidebar}
+          language={language}
         />
 
         <main className="flex-1 flex justify-center">
-          <div className="max-w-[800px] w-full px-6 py-8">
-            <ContentSection activeSection={activeSection} />
+          <div className={`${activeSection === 'home' ? 'max-w-[1000px]' : 'max-w-[800px]'} w-full px-6 py-8 transition-all duration-500`}>
+            <ContentSection 
+              activeSection={activeSection} 
+              setActiveSection={setActiveSection} 
+              language={language}
+            />
           </div>
 
-          <TableOfContents items={tocItems} />
+          {activeSection !== 'home' && <TableOfContents items={tocItems} language={language} />}
         </main>
       </div>
 
-      <Footer />
+      <Footer language={language} />
     </div>
   );
 }
