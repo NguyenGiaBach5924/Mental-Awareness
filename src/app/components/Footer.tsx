@@ -75,7 +75,7 @@ export function Footer({ language, setActiveSection }: FooterProps) {
             <ul className="space-y-2 text-sm">
               <li>
                 <button 
-                  onClick={() => { setActiveSection('what-is-depression'); window.scrollTo(0, 0); }}
+                  onClick={() => setActiveSection('what-is-depression')}
                   className="flex items-center gap-2 hover:text-blue-400 transition-colors group text-left"
                 >
                   <ExternalLink size={14} className="text-gray-500 group-hover:text-blue-400" />
@@ -84,7 +84,7 @@ export function Footer({ language, setActiveSection }: FooterProps) {
               </li>
               <li>
                 <button 
-                  onClick={() => { setActiveSection('what-is-anxiety'); window.scrollTo(0, 0); }}
+                  onClick={() => setActiveSection('what-is-anxiety')}
                   className="flex items-center gap-2 hover:text-blue-400 transition-colors group text-left"
                 >
                   <ExternalLink size={14} className="text-gray-500 group-hover:text-blue-400" />
@@ -93,7 +93,7 @@ export function Footer({ language, setActiveSection }: FooterProps) {
               </li>
               <li>
                 <button 
-                  onClick={() => { setActiveSection('library'); window.scrollTo(0, 0); }}
+                  onClick={() => setActiveSection('library')}
                   className="flex items-center gap-2 hover:text-blue-400 transition-colors group text-left"
                 >
                   <ExternalLink size={14} className="text-gray-500 group-hover:text-blue-400" />

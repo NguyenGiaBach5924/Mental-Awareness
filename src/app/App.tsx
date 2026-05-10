@@ -22,6 +22,10 @@ export default function App() {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeSection]);
+
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const toggleLanguage = () =>
     setLanguage(language === "EN" ? "VI" : "EN");
