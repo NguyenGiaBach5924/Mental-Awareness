@@ -13,6 +13,7 @@ import antidepression from '../../images/antidepress.png';
 import { libraryData } from '../data/libraryData';
 import { translations } from '../translations';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 const HighlightedText = ({ text, setActiveSection, language }: { text: string; setActiveSection: (s: string) => void; language: string }) => {
   if (!text) return null;
@@ -139,7 +140,15 @@ export function ContentSection({ activeSection, setActiveSection, language }: Co
             </div>
 
             <div className="relative group">
-              <Carousel className="w-full" opts={{ loop: true }}>
+              <Carousel 
+                className="w-full" 
+                opts={{ loop: true }}
+                plugins={[
+                  Autoplay({
+                    delay: 30000,
+                  }),
+                ]}
+              >
                 <CarouselContent>
                   {[
                     { img: tryImg, text: '"Thử: Bước đầu tiên luôn là khó khăn nhất, nhưng đó là bước quan trọng nhất."' },
@@ -275,7 +284,15 @@ export function ContentSection({ activeSection, setActiveSection, language }: Co
             </div>
 
             <div className="relative group">
-              <Carousel className="w-full" opts={{ loop: true }}>
+              <Carousel 
+                className="w-full" 
+                opts={{ loop: true }}
+                plugins={[
+                  Autoplay({
+                    delay: 5000,
+                  }),
+                ]}
+              >
                 <CarouselContent>
                   {[
                     { img: tryImg, text: '"Try: The first step is always the hardest, but it\'s the most important."' },

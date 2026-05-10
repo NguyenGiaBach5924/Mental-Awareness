@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronRight, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, X, Home, CloudRain, Frown, BookOpen } from 'lucide-react';
 import { translations } from '../translations';
 
 interface SidebarProps {
@@ -41,10 +41,11 @@ export function Sidebar({ activeSection, setActiveSection, isOpen, closeSidebar,
   };
 
   const menuItems = [
-    { id: 'home', label: t.home, subsections: [] },
+    { id: 'home', label: t.home, icon: Home, subsections: [] },
     {
       id: 'depression',
       label: t.depression,
+      icon: CloudRain,
       subsections: [
         { id: 'what-is-depression', label: t.whatIsDepression },
         { id: 'misconceptions', label: t.misconceptions },
@@ -55,6 +56,7 @@ export function Sidebar({ activeSection, setActiveSection, isOpen, closeSidebar,
     {
       id: 'anxiety',
       label: t.anxiety,
+      icon: Frown,
       subsections: [
         { id: 'what-is-anxiety', label: t.whatIsAnxiety },
         { id: 'cause', label: t.cause },
@@ -65,6 +67,7 @@ export function Sidebar({ activeSection, setActiveSection, isOpen, closeSidebar,
     {
       id: 'library',
       label: t.library,
+      icon: BookOpen,
       subsections: []
     },
   ];
@@ -103,13 +106,16 @@ export function Sidebar({ activeSection, setActiveSection, isOpen, closeSidebar,
                         : 'hover:bg-white dark:hover:bg-gray-700'
                     } ${getSectionColor(item.id).split(' ')[0]}`}
                   >
-                    <span className={`font-semibold ${
-                      expandedSections.includes(item.id) 
-                        ? getSectionColor(item.id).split(' ')[2] 
-                        : 'text-gray-700 dark:text-gray-200'
-                    }`}>
-                      {item.label}
-                    </span>
+                    <div className="flex items-center gap-3">
+                      {item.icon && <item.icon size={20} className={expandedSections.includes(item.id) ? getSectionColor(item.id).split(' ')[2] : 'text-gray-500'} />}
+                      <span className={`font-semibold ${
+                        expandedSections.includes(item.id) 
+                          ? getSectionColor(item.id).split(' ')[2] 
+                          : 'text-gray-700 dark:text-gray-200'
+                      }`}>
+                        {item.label}
+                      </span>
+                    </div>
                     {expandedSections.includes(item.id) ? (
                       <ChevronDown size={18} className={getSectionColor(item.id).split(' ')[2]} />
                     ) : (
@@ -144,13 +150,19 @@ export function Sidebar({ activeSection, setActiveSection, isOpen, closeSidebar,
                     setActiveSection(item.id);
                     closeSidebar();
                   }}
-                  className={`w-full text-left px-3 py-2.5 rounded-xl transition-all duration-200 ${
+                  className={`w-full text-left px-3 py-2.5 rounded-xl transition-all duration-200 flex items-center gap-3 ${
                     activeSection === item.id
                       ? getActiveStyles(item.id)
                       : `text-gray-700 dark:text-gray-200 font-medium ${getSectionColor(item.id).split(' ').slice(0, 2).join(' ')}`
                   }`}
                 >
-                  {item.label}
+                  {item.icon && (
+                    <item.icon 
+                      size={20} 
+                      className={activeSection === item.id ? 'text-white' : getSectionColor(item.id).split(' ')[2]} 
+                    />
+                  )}
+                  <span>{item.label}</span>
                 </button>
               )}
             </div>

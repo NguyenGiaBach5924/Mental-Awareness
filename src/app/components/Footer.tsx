@@ -22,15 +22,15 @@ export function Footer({ language, setActiveSection }: FooterProps) {
               {t.aboutUsText}
             </p>
             <div className="flex items-center gap-4 pt-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/20 group">
+              {/* <a href="#" className="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-500/20 group">
                 <Facebook size={20} className="group-hover:scale-110 transition-transform" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-pink-600/10 flex items-center justify-center text-pink-400 hover:bg-pink-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-pink-500/20 group">
                 <Instagram size={20} className="group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-300 hover:bg-blue-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-400/20 group" title="Zalo">
+              </a> */}
+              {/* <a href="#" className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-300 hover:bg-blue-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-blue-400/20 group" title="Zalo">
                 <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
-              </a>
+              </a> */}
             </div>
           </div>
 
