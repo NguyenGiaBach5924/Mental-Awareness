@@ -3,9 +3,10 @@ import { translations } from '../translations';
 
 interface FooterProps {
   language: string;
+  setActiveSection: (section: string) => void;
 }
 
-export function Footer({ language }: FooterProps) {
+export function Footer({ language, setActiveSection }: FooterProps) {
   const t = translations[language as keyof typeof translations].footer;
 
   return (
@@ -39,13 +40,13 @@ export function Footer({ language }: FooterProps) {
               {t.contact}
             </h4>
             <div className="space-y-3 text-sm">
-              <a href="mailto:info@mentalhealthawareness.org" className="flex items-center gap-3 hover:text-blue-400 transition-colors group">
+              <a href="mailto:nthha.9005@gmail.com" className="flex items-center gap-3 hover:text-blue-400 transition-colors group">
                 <Mail size={18} className="text-blue-400 group-hover:scale-110 transition-transform" />
-                info@mentalhealthawareness.org
+                nthha.9005@gmail.com
               </a>
               <p className="flex items-center gap-3">
                 <Phone size={18} className="text-green-400" />
-                +84 (0) 123 456 789
+                +84 (0) 866 530 913
               </p>
             </div>
           </div>
@@ -58,9 +59,12 @@ export function Footer({ language }: FooterProps) {
             <p className="text-sm leading-relaxed text-gray-400">
               {t.needHelpText}
             </p>
-            <button className="px-6 py-2 bg-yellow-500/10 hover:bg-yellow-500 text-yellow-500 hover:text-black rounded-full text-sm font-bold transition-all duration-300 border border-yellow-500/50">
-              Emergency Hotlines
-            </button>
+            <a 
+              href="tel:+84866530913"
+              className="inline-flex px-6 py-2 bg-yellow-500/10 hover:bg-yellow-500 text-yellow-500 hover:text-black rounded-full text-sm font-bold transition-all duration-300 border border-yellow-500/50"
+            >
+              Hotline: +84 (0) 866 530 913
+            </a>
           </div>
 
           <div className="space-y-4">
@@ -70,22 +74,31 @@ export function Footer({ language }: FooterProps) {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#depression" className="flex items-center gap-2 hover:text-blue-400 transition-colors group">
+                <button 
+                  onClick={() => { setActiveSection('what-is-depression'); window.scrollTo(0, 0); }}
+                  className="flex items-center gap-2 hover:text-blue-400 transition-colors group text-left"
+                >
                   <ExternalLink size={14} className="text-gray-500 group-hover:text-blue-400" />
                   Depression
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#anxiety" className="flex items-center gap-2 hover:text-blue-400 transition-colors group">
+                <button 
+                  onClick={() => { setActiveSection('what-is-anxiety'); window.scrollTo(0, 0); }}
+                  className="flex items-center gap-2 hover:text-blue-400 transition-colors group text-left"
+                >
                   <ExternalLink size={14} className="text-gray-500 group-hover:text-blue-400" />
                   Anxiety
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#library" className="flex items-center gap-2 hover:text-blue-400 transition-colors group">
+                <button 
+                  onClick={() => { setActiveSection('library'); window.scrollTo(0, 0); }}
+                  className="flex items-center gap-2 hover:text-blue-400 transition-colors group text-left"
+                >
                   <ExternalLink size={14} className="text-gray-500 group-hover:text-blue-400" />
                   Medical Library
-                </a>
+                </button>
               </li>
             </ul>
           </div>

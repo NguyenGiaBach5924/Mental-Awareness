@@ -374,11 +374,29 @@ export function ContentSection({ activeSection, setActiveSection, language }: Co
                   </div>
                 </div>
               </div>
+
+              {/* Video Section */}
+              <div className="mt-12">
+                <h3 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white flex items-center justify-center gap-2">
+                  <span className="w-8 h-[2px] bg-blue-500"></span>
+                  Learn More Through TEDx
+                  <span className="w-8 h-[2px] bg-blue-500"></span>
+                </h3>
+                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800">
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/dh-OPuaLTMY"
+                    title="Mental Health Awareness | Annie Ljungqvist | TEDxYouth@Upanga"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <p className="mt-4 text-center text-sm text-gray-500 italic">
+                  Annie Ljungqvist shares insights on Mental Health Awareness at TEDxYouth@Upanga
+                </p>
+              </div>
             </div>
 
-            <div className="mt-6 text-sm text-gray-500 dark:text-gray-400 text-center">
-              {t.readingTime}: 2 min · {t.lastUpdated}: April 20, 2026
-            </div>
           </div>
         );
 
@@ -1269,9 +1287,6 @@ The table below presents the nine DSM-5 diagnostic criteria and how they may man
             <p className="text-lg text-gray-600 dark:text-gray-400 mt-4 leading-relaxed text-justify">
               <HighlightedText text="Anxiety is more than just feeling sad. It's a serious medical condition that affects how you feel, think, and handle daily activities." setActiveSection={setActiveSection} language={language} />
             </p>
-            <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-              Reading time: 5 min · Last updated: April 20, 2026
-            </div>
 
             <section id="definition" className="mt-8">
               <h2>What is Anxiety?</h2>

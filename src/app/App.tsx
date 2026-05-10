@@ -70,7 +70,7 @@ export default function App() {
         </main>
       </div>
 
-      <Footer language={language} />
+      <Footer language={language} setActiveSection={setActiveSection} />
     </div>
   );
 }
