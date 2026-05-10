@@ -10,6 +10,13 @@ import environment from '../../images/enviromental.jpeg';
 import tryharder from '../../images/tryharder.avif';
 import poor from '../../images/poor.webp';
 import antidepression from '../../images/antidepress.png';
+import failed from '../../images/failed.jpg';
+import anxie1 from '../../images/anxie1.jpg';
+import helpful from '../../images/helpful.webp';
+import Do from '../../images/Do.jpg';
+import Dont from '../../images/dont.png';
+import support from '../../images/supportive.webp';
+import toDo from '../../images/good.webp';
 import { libraryData } from '../data/libraryData';
 import { translations } from '../translations';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
@@ -975,6 +982,7 @@ The table below presents the nine DSM-5 diagnostic criteria and how they may man
               <p className="mt-3 leading-relaxed text-gray-700 dark:text-gray-300 text-justify">
                 <HighlightedText text="The most important thing to remember is this: you are not at fault for experiencing depression, and you do not have to face it alone. Below are practical steps you can take:" setActiveSection={setActiveSection} language={language} />
               </p>
+
               <ul className="list-disc list-inside mt-4 space-y-2 text-gray-700 dark:text-gray-300">
                 <li className="flex gap-2">
                   <span className="text-[#1E2A38] dark:text-blue-400">•</span>
@@ -1009,7 +1017,7 @@ The table below presents the nine DSM-5 diagnostic criteria and how they may man
                 </li>
               </ul>
             </section>
-
+              <img src={support} alt="support" className="w-full h-auto flex gap-4" />
             <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
               <div className="flex gap-3">
                 <Lightbulb className="text-blue-600 dark:text-blue-400 flex-shrink-0" size={20} />
@@ -1027,7 +1035,8 @@ The table below presents the nine DSM-5 diagnostic criteria and how they may man
               <p className="mt-3 leading-relaxed text-gray-700 dark:text-gray-300 text-justify">
                 <HighlightedText text="Your support can make a significant difference, but it must be offebrown appropriately. Some responses, although well-intentioned, may unintentionally cause additional harm. The following guidelines may be helpful:" setActiveSection={setActiveSection} language={language} />
               </p>
-              <p className="font-semibold mt-4">What to do</p>
+              <p className="font-semibold mt-4 space-y-4 mt-3 leading-relaxed">What to do</p>
+              <img src={toDo} alt="toDo" className="w-full h-auto flex gap-4 space-y-4" />
               <ul className="list-disc list-inside mt-4 space-y-2 text-gray-700 dark:text-gray-300">
                 <li className="flex gap-2 items-start">
                   <span className="text-[#1E2A38] dark:text-blue-400 flex-shrink-0 mt-1.5">•</span>
@@ -1047,6 +1056,7 @@ The table below presents the nine DSM-5 diagnostic criteria and how they may man
                 </li>
               </ul>
               <p className="font-semibold mt-4">What NOT to do</p>
+              <img src={Dont} alt="Dont" className="w-full h-auto flex gap-4" />
               <ul className="list-disc list-inside mt-4 space-y-2 text-gray-700 dark:text-gray-300">
                 <li className="flex gap-2 items-start">
                   <span className="text-[#1E2A38] dark:text-blue-400 flex-shrink-0 mt-1.5">•</span>
@@ -1311,7 +1321,7 @@ The table below presents the nine DSM-5 diagnostic criteria and how they may man
               <p className="indent-8">
                     <HighlightedText text="Anxiety is a completely normal part of life. Before an important exam, a job interview, or when receiving troubling news from family, most people experience worry, a faster heartbeat, and restlessness. This is a natural survival mechanism that helps us focus and prepare to deal with challenges." setActiveSection={setActiveSection} language={language} />
                   </p>
-
+                  <img src={failed} alt="failed" className="w-full h-auto" />
                   <p className="indent-8">
                     <HighlightedText text="Anxiety disorders, however, are fundamentally different from normal anxiety. When anxiety becomes a disorder, feelings of fear and tension are persistent, excessive relative to the actual situation, and significantly impair daily functioning—including work, academic performance, relationships, and overall quality of life (Naveen and partner, 2024; Szuhany & Simon, 2022). Individuals affected are not simply “overly worried” or “shy”; they are experiencing genuine neurological and physiological responses that are beyond voluntary control." setActiveSection={setActiveSection} language={language} />
                   </p>
@@ -1354,7 +1364,7 @@ The table below presents the nine DSM-5 diagnostic criteria and how they may man
                     <li>Specific Phobia</li>
                     <li>Agoraphobia</li>
                   </ul>
-
+                  <img src={anxie1} alt="anxie1" className="w-full h-auto" />
                   <p className="indent-8">
                     <HighlightedText text="Epidemiological data indicate that anxiety disorders affect between 4% and more than 33.7% of the global population over a lifetime (Bandelow & Michaelis, 2015; Javaid and partner, 2023). The condition often begins early, with an average onset around age 11, and, if left untreated, tends to follow a chronic course into adulthood (Beesdo, Knappe, & Pine, 2009). This highlights the critical importance of early recognition and timely intervention." setActiveSection={setActiveSection} language={language} />
                   </p>              
@@ -1783,6 +1793,7 @@ The table below presents the nine DSM-5 diagnostic criteria and how they may man
               <p className="mt-3 leading-relaxed text-gray-700 dark:text-gray-300 text-justify">
                 <HighlightedText text="The most important thing to remember is this: you are not at fault for experiencing anxiety, and you do not have to face it alone. Below are practical steps you can take:" setActiveSection={setActiveSection} language={language} />
               </p>
+              <img src={Do} alt="Do" className="w-full h-auto flex gap-4" />
               <ul className="list-disc list-inside mt-4 space-y-2 text-gray-700 dark:text-gray-300">
                                          
                 <li className="flex gap-2">
@@ -1889,6 +1900,7 @@ The table below presents the nine DSM-5 diagnostic criteria and how they may man
               <p className="mt-3 leading-relaxed text-gray-700 dark:text-gray-300 text-justify">
                 You should listen more than you speak and sincerely acknowledge their feelings with statements such as, “I understand that you’re feeling anxious—I’m here with you.” Encourage and support them in seeking professional help from a psychologist or psychiatrist, for example by helping schedule appointments, reminding them of upcoming visits, and accompanying them if they are comfortable.
               </p>
+              <img src={helpful} alt="helpful" className="w-full h-auto" />
               <p className="mt-3 leading-relaxed text-gray-700 dark:text-gray-300 text-justify">
                 You can also support them in practicing relaxation techniques, deep breathing, and gradually facing anxiety-provoking situations under the guidance of a healthcare professional. When they experience anxiety or panic episodes, remain calm and gently remind them that these symptoms are temporary and not dangerous.
               </p>
